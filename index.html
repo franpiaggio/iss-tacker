@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISS Tracker 👽</title>
+  </head>
+  <body>
+    <section class="flex-col md:flex-row min-h-screen flex items-stretch h-96">
+      <div class="lg:flex w-1/2 bg-gray-500 bg-no-repeat bg-cover relative items-center h-24">
+        <div class="md:absolute bg-black inset-0 z-0 h-24">
+          <div id="map">
+          </div>
+        </div>
+      </div>
+      <div class="lg:w-1/2 w-fullflex items-center justify-center text-center md:px-16 px-0 z-0 my-64 md:my-0" style="background-color: #161616">
+        <div class="md:absolute lg:hidden z-10 inset-0 bg-gray-500 bg-no-repeat bg-cover items-center">
+          <div class="md:absolute bg-black opacity-60 inset-0 z-0"></div>
+        </div>
+        <div class="w-full py-6 z-20">
+          <h1 class="my-6 text-5xl font-bold text-center tracking-wide text-white">ISS Tracker</h1>
+          <div class="flex">
+              <div class="w-full lg:w-1/2 px-3">
+                <div class="widget w-full p-4 rounded-lg bg-white border-l-4 border-purple-400 px-1">
+                      <div class="flex items-center">
+                          <div class="flex items-center justify-center w-15 p-3 bg-purple-400 text-white rounded-full mr-3">
+                              <span class="material-icons material-icons-outlined">
+                               trending_up
+                              </span>
+                          </div>
+                          <div class="flex flex-col text-left">
+                              <div class="text-lg" id="altitude">-</div>
+                              <div class="text-sm text-gray-400">Altitude</div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="w-full lg:w-1/2 px-3">
+                  <div class="widget w-full p-4 rounded-lg bg-white border-l-4 border-blue-400 px-1">
+                      <div class="flex items-center">
+                          <div class="flex items-center justify-center w-15 p-3 bg-blue-400 text-white rounded-full mr-3">
+                            <span class="material-icons material-icons-outlined">
+                              arrow_right_alt
+                            </span>
+                          </div>
+                          <div class="flex flex-col text-left">
+                              <div class="text-lg" id="velocity">-</div>
+                              <div class="text-sm text-gray-400">Velocity</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="flex  mt-3">
+            <div class="w-full lg:w-1/2 px-3">
+              <div class="widget w-full p-4 rounded-lg bg-white border-l-4 border-gray-400 px-1">
+                    <div class="flex items-center">
+                        <div class="flex items-center justify-center w-15 p-3 bg-gray-400 text-white rounded-full mr-3">
+                          <span class="material-icons material-icons-outlined">
+                            nightlight_round
+                          </span>
+                        </div>
+                        <div class="flex flex-col text-left">
+                            <div class="text-lg" id="visibility">-</div>
+                            <div class="text-sm text-gray-400">Time</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="w-full lg:w-1/2 px-3">
+                <div class="widget w-full p-4 rounded-lg bg-white border-l-4 border-green-400 px-1">
+                    <div class="flex">
+                        <div class="flex items-center justify-center w-15 p-3 bg-green-400 text-white rounded-full mr-3">
+                          <span class="material-icons material-icons-outlined">
+                            location_searching
+                          </span>
+                        </div>
+                        <div class="flex flex-col text-left">
+                            <div class="text-lg" id="country">-</div>
+                            <div class="text-sm text-gray-400">Country</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="w-full my-6 px-3">
+              <!-- <iframe class="w-full" width="560" height="315" src="https://www.youtube.com/embed/EEIk7gwjgIM?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+              <iframe class="w-full" height="300" src="https://ustream.tv/embed/17074538" scrolling="no" allowfullscreen webkitallowfullscreen frameborder="0" style="border: 0 none transparent;"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

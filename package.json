@@ -1,0 +1,15 @@
+{
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.3.5"
+  },
+  "dependencies": {
+    "country-iso": "^2.0.5",
+    "leaflet": "^1.7.1"
+  }
+}
